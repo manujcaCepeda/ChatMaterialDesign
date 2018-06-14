@@ -15,8 +15,9 @@ import { AboutComponent } from './components/profile/about/about.component';
 import { PhotosComponent } from './components/profile/photos/photos.component';
 import { MessageComponent } from './components/chat/message/message.component';
 
+import { NavbarComponent } from './components/layouts/navbar/navbar.component';
+import { MaterialModule } from './shared/material.module';
 
-import {MatInputModule, MatFormFieldModule, MatButtonModule} from '@angular/material';
 
 
 @NgModule({
@@ -30,16 +31,15 @@ import {MatInputModule, MatFormFieldModule, MatButtonModule} from '@angular/mate
     ChatViewComponent,
     AboutComponent,
     PhotosComponent,
-    MessageComponent
+    MessageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
