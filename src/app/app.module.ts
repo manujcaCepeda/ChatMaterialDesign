@@ -17,7 +17,10 @@ import { MessageComponent } from './components/chat/message/message.component';
 
 import { NavbarComponent } from './components/layouts/navbar/navbar.component';
 import { MaterialModule } from './shared/material.module';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { DemoComponent } from './components/demo/demo.component';
+import { ToolbarComponent } from './components/layouts/toolbar/toolbar.component';
+import { FooterComponent } from './components/layouts/footer/footer.component' ;
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { MaterialModule } from './shared/material.module';
     AboutComponent,
     PhotosComponent,
     MessageComponent,
-    NavbarComponent
+    NavbarComponent,
+    DemoComponent,
+    ToolbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,7 @@ import { MaterialModule } from './shared/material.module';
     AppRoutingModule,
     FormsModule,
     MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

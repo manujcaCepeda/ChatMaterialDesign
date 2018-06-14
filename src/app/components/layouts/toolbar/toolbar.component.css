@@ -1,0 +1,32 @@
+  
+  .user-button {
+    min-width: 64px;
+      height: 64px;
+  }
+  
+  .avatar {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 8px 0 0;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    border: none;
+  }
+  
+  .s-16, mat-icon.s-16 {
+    font-size: 16px!important;
+    width: 16px!important;
+    height: 16px!important;
+    min-width: 16px!important;
+    min-height: 16px!important;
+    line-height: 16px!important;
+  }

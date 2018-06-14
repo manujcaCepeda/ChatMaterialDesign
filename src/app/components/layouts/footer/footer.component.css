@@ -1,0 +1,14 @@
+a {
+    color: #039be5;
+    text-decoration: none;
+}
+
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background: rgb(236, 229, 228);
+    height: 40px;
+    line-height: 40px;
+}
+
