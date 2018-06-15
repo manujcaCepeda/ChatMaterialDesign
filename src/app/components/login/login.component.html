@@ -9,7 +9,7 @@
 
             <div class="title">Login en EdukaSoft - Chat</div>
 
-            <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+            <form (ngSubmit)="login()" #myForm="ngForm">
                 <mat-form-field>
                     <input type="email" matInput placeholder="Ingrese su email" id="email" [(ngModel)]="email" name="email" required>
                 </mat-form-field>
@@ -24,7 +24,7 @@
                     </a>
                 </div>
 
-                <button mat-raised-button color="accent" aria-label="LOG IN" [disabled]="!myForm.form.valid">
+                <button type="submit" mat-raised-button color="accent" aria-label="LOG IN" [disabled]="!myForm.form.valid">
                     Login
                 </button>
 

@@ -15,7 +15,6 @@ import { AboutComponent } from './components/profile/about/about.component';
 import { PhotosComponent } from './components/profile/photos/photos.component';
 import { MessageComponent } from './components/chat/message/message.component';
 
-import { NavbarComponent } from './components/layouts/navbar/navbar.component';
 import { MaterialModule } from './shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DemoComponent } from './components/demo/demo.component';
@@ -35,7 +34,6 @@ import { FooterComponent } from './components/layouts/footer/footer.component' ;
     AboutComponent,
     PhotosComponent,
     MessageComponent,
-    NavbarComponent,
     DemoComponent,
     ToolbarComponent,
     FooterComponent

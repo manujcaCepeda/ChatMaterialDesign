@@ -1,3 +1,36 @@
-<p>
-  profile works!
-</p>
+<div class="page-layout simple tabbed" fusePerfectScrollbar>
+  <!-- HEADER -->
+  <div class="header" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between end">
+
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start center">
+      <img class="profile-image avatar" src="assets/img/avatars/profile.jpg">
+      <div class="name">Manuel Cepeda
+      </div>
+    </div>
+
+    <div class="actions" fxLayout="row" fxLayoutAlign="end center">
+      <button mat-raised-button color="accent" aria-label="Follow">Actualizar Foto</button>
+    </div>
+
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <mat-tab-group dynamicHeight="true">
+
+      <mat-tab label="Mi Información">
+        <app-about></app-about>
+      </mat-tab>
+
+      <mat-tab label="Fotos & Videos">
+        <app-photos></app-photos>
+      </mat-tab>
+
+    </mat-tab-group>
+
+  </div>
+  <!-- / CONTENT -->
+
+</div>

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
   MatInputModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
-  MatListModule, MatMenuModule, MatCheckboxModule
+  MatListModule, MatMenuModule, MatCheckboxModule, MatTabsModule
 } from '@angular/material';
 
 
@@ -17,7 +17,8 @@ import {
     MatListModule,
     MatInputModule,
     MatMenuModule, 
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTabsModule
   ],
   exports: [
     LayoutModule,
@@ -28,7 +29,8 @@ import {
     MatListModule,
     MatInputModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTabsModule
   ]
 })
 export class MaterialModule { }
