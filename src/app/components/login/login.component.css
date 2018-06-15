@@ -3,19 +3,19 @@ a {
     text-decoration: none;
 }
 
-#login {
+.login-container {
     width: 100%;
     overflow: auto;
     background: url('/assets/img/backgrounds/dark-material-bg.jpg') no-repeat;
     background-size: cover;
-    height: 100%;
+    /* height: 100%; */
 }
 
 #login-form-wrapper {
     padding: 20px;
 }
 
-#login-form {
+.login-form {
     width: 384px;
     max-width: 384px;
     padding: 32px;
