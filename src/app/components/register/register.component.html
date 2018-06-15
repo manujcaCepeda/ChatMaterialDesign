@@ -1,3 +1,44 @@
-<p>
-  register works!
-</p>
+<div class="login-container">
+  <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+    <div class="login-form">
+
+      <div class="logo">
+        <img src="assets/img/logos/angular.png">
+      </div>
+
+      <div class="title">Registro en EdukaSoft - Chat</div>
+
+      <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <mat-form-field>
+          <input type="email" matInput placeholder="Ingrese su email" id="email" [(ngModel)]="email" name="email" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" id="password" [(ngModel)]="password" name="password" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="text" matInput placeholder="Ingrese su nombre" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+        </mat-form-field>
+
+        <div class="terms" fxLayout="row" fxLayoutAlign="center center">
+            <mat-checkbox class="term" name="terms" aria-label="I read and accept" required>
+                <span>I read and accept</span>
+            </mat-checkbox>
+            <a href="#">terms and conditions</a>
+        </div>
+
+        <button mat-raised-button color="accent" aria-label="LOG IN" [disabled]="!myForm.form.valid">
+          Registro
+        </button>
+
+        <div class="login" fxLayout="column" fxLayoutAlign="center center">
+            <span class="text">Ya tiene una cuenta?</span>
+            <a class="link" routerLink="/login">Login</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

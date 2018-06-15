@@ -1,5 +1,4 @@
-<div class="login-container" fxLayout="column">
-
+<div class="login-container">
     <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
 
         <div class="login-form">
@@ -8,11 +7,11 @@
                 <img src="assets/img/logos/angular.png">
             </div>
 
-            <div class="title">LOGIN TO YOUR ACCOUNT</div>
+            <div class="title">Login en EdukaSoft - Chat</div>
 
-            <form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
+            <form (ngSubmit)="onSubmit()" #myForm="ngForm">
                 <mat-form-field>
-                    <input type="email" matInput placeholder="Enter your email" id="email" [(ngModel)]="email" name="email" required>
+                    <input type="email" matInput placeholder="Ingrese su email" id="email" [(ngModel)]="email" name="email" required>
                 </mat-form-field>
 
                 <mat-form-field>
@@ -21,12 +20,12 @@
 
                 <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="flex-end">
                     <a class="forgot-password" [routerLink]="'/pages/auth/forgot-password'">
-                        Forgot Password?
+                        Olvido su contraseña?
                     </a>
                 </div>
 
-                <button mat-raised-button color="accent" class="submit-button" aria-label="LOG IN" [disabled]="!myForm.form.valid">
-                    LOGIN
+                <button mat-raised-button color="accent" aria-label="LOG IN" [disabled]="!myForm.form.valid">
+                    Login
                 </button>
 
             </form>
@@ -36,16 +35,15 @@
             </div>
 
             <button mat-raised-button class="google">
-                Log in with Google
+                Login con Google
             </button>
 
             <div class="register" fxLayout="column" fxLayoutAlign="center center">
-                <span class="text">Don't have an account?</span>
-                <a class="link" [routerLink]="'/pages/auth/register'">Create an account</a>
+                <span class="text">No tienes un cuenta?</span>
+                <a class="link" routerLink="/register">Crear nueva cuenta</a>
             </div>
 
         </div>
 
     </div>
-
 </div>

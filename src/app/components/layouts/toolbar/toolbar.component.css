@@ -1,4 +1,11 @@
   
+  .toolbar{
+    justify-content: space-between;
+    widows: 100%;
+    background-color: #2d323e;
+    color: white;
+  }
+  
   .user-button {
     min-width: 64px;
       height: 64px;

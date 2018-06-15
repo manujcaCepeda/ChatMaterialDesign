@@ -1,0 +1,73 @@
+a {
+    color: #039be5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-container {
+    width: 100%;
+    overflow: auto;
+    background: url('/assets/img/backgrounds/dark-material-bg.jpg') no-repeat;
+    background-size: cover;
+    /* height: 100%; */
+}
+
+#login-form-wrapper {
+    padding: 20px;
+}
+
+.login-form {
+    width: 384px;
+    max-width: 384px;
+    padding: 32px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.logo {
+    width: 128px;
+    margin: 32px auto;
+}
+
+.title {
+    font-size: 20px;
+    margin: 16px 0 32px 0;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.forgot-password {
+    margin-top: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 16px
+}
+
+button {
+    width: 192px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+
+
+.terms {
+    margin: 16px 0 32px 0;
+}
+
+.terms a {
+    font-size: 16px;
+    margin-left: 4px;
+    
+}
+
+.login {
+    margin: 32px auto 24px auto;
+    font-weight: 500;
+}
+
+.text {
+    margin-right: 8px;
+}

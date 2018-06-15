@@ -7,12 +7,12 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 //
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'chat', component: ChatComponent }
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'chat', component: ChatComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: '', redirectTo:'login', pathMatch: 'full'},
+  { path: '**', redirectTo:'login' }
 ];
 
 
