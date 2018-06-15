@@ -20,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DemoComponent } from './components/demo/demo.component';
 import { ToolbarComponent } from './components/layouts/toolbar/toolbar.component';
 import { FooterComponent } from './components/layouts/footer/footer.component' ;
+import { NavbarComponent } from './components/layouts/navbar/navbar.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FooterComponent } from './components/layouts/footer/footer.component' ;
     MessageComponent,
     DemoComponent,
     ToolbarComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

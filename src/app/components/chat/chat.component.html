@@ -6,21 +6,19 @@
       <span class="titulo">Chats</span>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/">Link 1</a>
-      <a mat-list-item href="/">Link 2</a>
-      <a mat-list-item href="/">Link 3</a>
+      <a mat-list-item routerLink="/chat">Link 1</a>
+      <a mat-list-item >Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
   </mat-sidenav>
+
+  
   <mat-sidenav-content>
-    <!-- <mat-toolbar color="primary">
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+    <mat-toolbar *ngIf="isHandset$ | async">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button> -->
-
-    <!-- <span>EdukSoft Chat</span> -->
-    <!-- <app-toolbar style="width: 100%;"></app-toolbar> -->
-
-    <!-- </mat-toolbar> -->
+        </button>
+    </mat-toolbar>
 
     <app-chat-start></app-chat-start>
   </mat-sidenav-content>
