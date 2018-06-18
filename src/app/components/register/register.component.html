@@ -1,15 +1,18 @@
 <div class="login-container">
   <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
 
-    <div class="login-form">
+    <mat-error>
+      {{errorMessage}}
+    </mat-error>
 
+    <div class="login-form">
       <div class="logo">
         <img src="assets/img/logos/angular.png">
       </div>
 
       <div class="title">Registro en EdukaSoft - Chat</div>
 
-      <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <form (ngSubmit)="registro()" #myForm="ngForm">
         <mat-form-field>
           <input type="email" matInput placeholder="Ingrese su email" id="email" [(ngModel)]="email" name="email" required>
         </mat-form-field>
@@ -23,10 +26,10 @@
         </mat-form-field>
 
         <div class="terms" fxLayout="row" fxLayoutAlign="center center">
-            <mat-checkbox class="term" name="terms" aria-label="I read and accept" required>
-                <span>I read and accept</span>
-            </mat-checkbox>
-            <a href="#">terms and conditions</a>
+          <mat-checkbox class="term" name="terms" aria-label="I read and accept" required>
+            <span>I read and accept</span>
+          </mat-checkbox>
+          <a href="#">terms and conditions</a>
         </div>
 
         <button mat-raised-button color="accent" aria-label="LOG IN" [disabled]="!myForm.form.valid">
@@ -34,8 +37,8 @@
         </button>
 
         <div class="login" fxLayout="column" fxLayoutAlign="center center">
-            <span class="text">Ya tiene una cuenta?</span>
-            <a class="link" routerLink="/login">Login</a>
+          <span class="text">Ya tienes una cuenta?</span>
+          <a class="link" routerLink="/login">Login</a>
         </div>
 
       </form>

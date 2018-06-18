@@ -20,6 +20,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DemoComponent } from './components/demo/demo.component';
 import { ToolbarComponent } from './components/layouts/toolbar/toolbar.component';
 import { FooterComponent } from './components/layouts/footer/footer.component' ;
+import { AuthService } from './services/auth.service';
+
+//Firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -44,9 +51,14 @@ import { FooterComponent } from './components/layouts/footer/footer.component' ;
     AppRoutingModule,
     FormsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    //firebase
+    AngularFireModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
