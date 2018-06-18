@@ -31,3 +31,14 @@
     
     /* margin-top: 5px;  */
 }
+
+
+.container {
+    flex: 1;
+    background: red;
+}
+
+.contenido{
+    flex: 1;
+    background: blue;
+}
