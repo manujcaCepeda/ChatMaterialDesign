@@ -36,7 +36,25 @@ export class LoginComponent implements OnInit {
     //   console.log("error: " + error.message);
     //   this.errorMessage = "Credenciales Inválidas!"
     // });
-
   }
 
+
+  loginGmail(){
+    /*this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    .then( user => {
+      debugger;
+      let authState = user;
+      this.authService.setUserDataGmail(authState.user.uid, authState.user.email, authState.user.displayName, authState.user.photoURL);
+      this.router.navigateByUrl('chat');
+
+    });*/
+    this.authService.loginGmail()
+      .then(res => {
+        this.router.navigateByUrl('/chat');
+      }, error => {
+        console.log("error: " + error.message);
+        this.errorMessage = "Credenciales Inválidas!"
+      });
+    
+  }
 }
