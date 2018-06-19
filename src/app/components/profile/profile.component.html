@@ -3,13 +3,13 @@
   <div class="header" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between end">
 
     <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start center">
-      <img class="profile-image avatar" src="assets/img/avatars/profile.jpg">
-      <div class="name">Manuel Cepeda
-      </div>
+      <img *ngIf="usuarioActual.avatar" class="profile-image avatar huge" [src]="usuarioActual.avatar">
+      <img *ngIf="!usuarioActual.avatar" class="profile-image avatar huge" src="assets/img/avatars/profile.jpg">
+      <div class="name">{{usuarioActual.name}}</div>
     </div>
 
     <div class="actions" fxLayout="row" fxLayoutAlign="end center">
-      <button mat-raised-button color="accent" aria-label="Follow">Actualizar Foto</button>
+      <button mat-raised-button color="accent" aria-label="Follow" (click)="cambiarFoto()">Actualizar Foto</button>
     </div>
 
   </div>

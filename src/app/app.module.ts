@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { ChatComponent } from './components/chat/chat.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent, DialogUpdateAvatar } from './components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ChatStartComponent } from './components/chat/chat-start/chat-start.component';
@@ -31,6 +31,8 @@ import { UserResolver } from './shared/user.resolver';
 import { AuthGuard } from './shared/auth.guard';
 
 
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,8 @@ import { AuthGuard } from './shared/auth.guard';
     DemoComponent,
     ToolbarComponent,
     FooterComponent,
+
+    DialogUpdateAvatar
   ],
   imports: [
     BrowserModule,
@@ -54,11 +58,16 @@ import { AuthGuard } from './shared/auth.guard';
     FormsModule,
     MaterialModule,
     FlexLayoutModule,
+
+    MatProgressBarModule,
     //firebase
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase)
+  ],
+  entryComponents: [
+    DialogUpdateAvatar
   ],
   providers: [AuthService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]

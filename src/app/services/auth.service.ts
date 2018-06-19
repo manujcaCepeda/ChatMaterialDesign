@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase, AngularFireObject } from "angularfire2/database";
+import { User } from "../models/user.model";
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,7 @@ export class AuthService {
 
   logout() {
     return new Promise((resolve, reject) => {
-      if ( this.afAuth.auth.currentUser) {
+      if (this.afAuth.auth.currentUser) {
         this.afAuth.auth.signOut()
         resolve();
       }
@@ -57,9 +58,9 @@ export class AuthService {
     });
   }
 
-  getCurrentUser(){
+  getCurrentUser() {
     return new Promise<any>((resolve, reject) => {
-      var user = this.afAuth.auth.onAuthStateChanged(function(user){
+      var user = this.afAuth.auth.onAuthStateChanged(function (user) {
         if (user) {
           resolve(user);
         } else {
@@ -69,8 +70,7 @@ export class AuthService {
     })
   }
 
-  setUserData(email: string, name: string, status: string, currentUserId:string, avatar:string) {
-    debugger;
+  setUserData(email: string, name: string, status: string, currentUserId: string, avatar: string) {
     const path = `users/${currentUserId}`;
     const data = {
       email: email,
@@ -80,6 +80,11 @@ export class AuthService {
     };
     this.db.object(path).update(data)
       .catch(error => console.log(error));
+  }
+
+  getUserByUid(uid: string): AngularFireObject<User> {
+    const path = `/users/${uid}`;
+    return this.db.object(path);
   }
 
 }

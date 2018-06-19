@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Hola {{data.usuarioActual.name}}</h1>
+<div mat-dialog-content>
+
+
+
+  <div *ngIf="upload">
+      <div class="progress">
+        <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': upload?.progress + '%' }"></div>
+      </div>
+      Progreso: {{upload?.progress}}% Complete
+    </div>
+
+
+  <!-- <mat-form-field> -->
+
+    <div class="file-uploader" style="width: 210px; margin: 15px 0 !important;">
+        Upload nueva foto:
+        <input hidden type="file" #fileInput (change)="handleFiles($event)"/>
+        <button mat-fab
+                class="add-file-button mat-warn"
+                (click)="fileInput.click()"
+                aria-label="Add file">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+  <!-- </mat-form-field> -->
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data.files" cdkFocusInitial>Ok</button>
+</div>
