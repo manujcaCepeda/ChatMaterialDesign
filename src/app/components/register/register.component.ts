@@ -30,11 +30,9 @@ export class RegisterComponent implements OnInit {
         }else{
           this.router.navigateByUrl('/login')
         }
-      //this.successMessage = "Your account has been created";
     }, err => {
       console.log(err.message);
       this.errorMessage = err.message;
-      //this.successMessage = "";
     })
   }
 }

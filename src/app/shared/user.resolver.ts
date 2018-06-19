@@ -12,7 +12,6 @@ export class UserResolver implements Resolve<any> {
     //let user = new FirebaseUserModel();
 
     return new Promise((resolve, reject) => {
-      debugger;
       this.authService.getCurrentUser()
       .then(res => {
         if(res.providerData[0].providerId == 'password'){
