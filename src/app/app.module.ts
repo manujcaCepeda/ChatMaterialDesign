@@ -27,6 +27,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { UserResolver } from './shared/user.resolver';
+import { AuthGuard } from './shared/auth.guard';
 
 
 @NgModule({
@@ -58,7 +60,7 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [AuthService],
+  providers: [AuthService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -46,12 +46,25 @@ export class AuthService {
   }
 
 
-  loginGmail() {
+  loginGoogle() {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(user => {
           resolve(user);
         }, err => reject(err));
     });
+  }
+
+  getCurrentUser(){
+    debugger;
+    return new Promise<any>((resolve, reject) => {
+      var user = this.afAuth.auth.onAuthStateChanged(function(user){
+        if (user) {
+          resolve(user);
+        } else {
+          reject('No user logged in');
+        }
+      })
+    })
   }
 }
