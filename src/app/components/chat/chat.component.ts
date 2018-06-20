@@ -16,7 +16,7 @@ export class ChatComponent implements OnInit {
   usersRef: AngularFireList<User[]>;
   users: Observable<any>;
   selectedChat: boolean = false;
-  contactoLogin: any;
+  userLogin: any;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -39,7 +39,7 @@ export class ChatComponent implements OnInit {
 
     this.authService.authUser().subscribe(user => {
       if (user) {
-        this.contactoLogin = user;
+        this.userLogin = user;
       }
     });
   }

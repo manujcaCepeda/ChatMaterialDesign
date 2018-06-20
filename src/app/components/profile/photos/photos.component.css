@@ -1,0 +1,60 @@
+.p-24 {
+    padding: 24px!important;
+}
+
+#photos-videos .period .period-title {
+    margin-bottom: 24px;
+}
+
+#photos-videos .period .period-title .name {
+    font-size: 20px;
+}
+
+#photos-videos .period .period-title .info {
+    margin-left: 16px;
+    font-size: 15px;
+    color: rgba(0,0,0,.54);
+}
+
+.period-media {
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    display: flex;
+}
+
+#photos-videos .period .period-media {
+    margin-bottom: 16px;
+}
+
+
+#photos-videos .period .period-media .media {
+    margin: 0 16px 16px 0;
+    position: relative;
+}
+
+#photos-videos .period .period-media .media .preview {
+    width: 256px;
+    height: 256px;
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    border: none;
+}
+
+#photos-videos .period .period-media .media .title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 16px;
+    height: 48px;
+    line-height: 48px;
+    background: rgba(0,0,0,.54);
+    color: #fff;
+    font-size: 15px;
+}

@@ -10,7 +10,7 @@
 
         <div *ngFor="let user of users | async">
             <!-- {{user.key}} - {{contactoLogin.uid}} -->
-            <button mat-button class="contact" (click)="getChat(user)" *ngIf="user.key !== contactoLogin.uid">
+            <button mat-button class="contact" (click)="getChat(user)" *ngIf="user.key !== userLogin.uid">
               <!-- <mat-card-header>
                   <div class="avatar-wrapper">
                       <img class="avatar" *ngIf="user.avatar" [src]="user.avatar">
