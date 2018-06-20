@@ -1,7 +1,8 @@
+import { Observable } from 'rxjs';
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { AngularFireDatabase, AngularFireObject } from "angularfire2/database";
+import { AngularFireDatabase, AngularFireObject, AngularFireList } from "angularfire2/database";
 import { User } from "../models/user.model";
 
 @Injectable({
@@ -12,7 +13,8 @@ export class AuthService {
   constructor(
     public afAuth: AngularFireAuth,
     private db: AngularFireDatabase,
-  ) { }
+  ) {
+  }
 
 
   login(email: string, password: string) {
@@ -38,8 +40,7 @@ export class AuthService {
   logout() {
     return new Promise((resolve, reject) => {
       if (this.afAuth.auth.currentUser) {
-        this.afAuth.auth.signOut()
-        resolve();
+        this.afAuth.auth.signOut().then(user => resolve(user));
       }
       else {
         reject();
@@ -85,6 +86,16 @@ export class AuthService {
   getUserByUid(uid: string): AngularFireObject<User> {
     const path = `/users/${uid}`;
     return this.db.object(path);
+  }
+
+
+  authUser(): Observable<firebase.User> {
+    return this.afAuth.authState;
+  }
+
+  getUsers(): AngularFireList<User[]> {
+    const path = '/users';
+    return this.db.list(path);
   }
 
 }

@@ -1,12 +1,11 @@
 <mat-toolbar class="toolbar">
   <span>EdukSoft Chat</span>
   <div>
-    
-    <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+    <button mat-button [matMenuTriggerFor]="userMenu" class="user-button" *ngIf="(user|async)?.uid">
       <div fxLayout="row" fxLayoutAlign="center center">
-        <img class="avatar" *ngIf="usuarioActual.avatar" [src]="usuarioActual.avatar">
         <img class="avatar" *ngIf="!usuarioActual.avatar" src="assets/img/avatars/profile.jpg">
-        <span class="username mr-12" fxHide fxShow.gt-sm>{{usuarioActual.displayName}}</span>
+        <img class="avatar" *ngIf="usuarioActual.avatar" [src]="usuarioActual.avatar">
+        <span class="username mr-12" fxHide fxShow.gt-sm>{{usuarioActual.name}}</span>
         <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
       </div>
     </button>

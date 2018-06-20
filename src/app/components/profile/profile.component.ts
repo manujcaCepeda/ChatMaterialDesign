@@ -15,7 +15,7 @@ import { User } from '../../models/user.model';
 })
 export class ProfileComponent implements OnInit {
 
-  usuarioActual: User;
+  usuarioActual: User = {};
   usersRef: Observable<User>;
 
   constructor(private authService: AuthService, public dialog: MatDialog) { }
@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
         this.usersRef.subscribe(data => {
           this.usuarioActual = data;
           this.usuarioActual.uid = user.uid;
-        });
+        }, error => error);
       });
   }
 

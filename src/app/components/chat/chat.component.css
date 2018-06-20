@@ -3,7 +3,7 @@
   }
   
   .sidenav {
-    width: 300px;
+    width: 400px;
     box-shadow: 3px 0 6px rgba(0,0,0,.24);
   }
   
@@ -25,4 +25,81 @@
     margin-left: 5px;
     width: 38px;
     height: 38px;
+}
+
+
+/*************************/
+/* a {
+  white-space: normal;
+  text-align: left;
+  letter-spacing: .010em;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  padding: 16px;
+  font-weight: 400;
+  min-width: 88px;
+} */
+
+.contact {
+  white-space: normal;
+  text-align: left;
+  letter-spacing: .010em;
+  min-height: 70px;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  font-weight: 400;
+  width: 100%;
+  padding: 16px;
+  padding-left: 32px;
+}
+
+.avatar-wrapper .avatar {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.avatar {
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  line-height: 48px;
+  margin: 0 8px 0 0;
+  border-radius: 50%;
+}
+
+
+/**********************icono online***********/
+mat-icon.status.online {
+  color: #4caf50;
+}
+
+.avatar-wrapper mat-icon.status {
+  position: absolute;
+  top: 52px;
+  left: 65px;
+}
+mat-icon.status {
+  border-radius: 50%;
+}
+i.s-16, mat-icon.s-16 {
+  font-size: 16px!important;
+  width: 16px!important;
+  height: 16px!important;
+  min-width: 16px!important;
+  min-height: 16px!important;
+  line-height: 16px!important;
+}
+
+mat-icon.status.online:before {
+  content: "check_circle";
+}
+
+mat-icon.status.offline {
+  color: #dd2a0a;
+}
+
+mat-icon.status.offline:before {
+  content: "check_circle";
+}
+
+.contact-name {
+  font-size: 16px;
+  margin-left: 50px;
 }
