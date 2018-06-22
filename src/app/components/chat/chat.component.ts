@@ -1,3 +1,4 @@
+import { SharedService } from './../../services/shared.service';
 import { User } from './../../models/user.model';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -24,7 +25,7 @@ export class ChatComponent implements OnInit {
     );
 
   constructor(private breakpointObserver: BreakpointObserver,
-    private authService: AuthService) {
+    private authService: AuthService, private sharedService: SharedService) {
 
   }
 
@@ -38,19 +39,17 @@ export class ChatComponent implements OnInit {
     );
 
     this.authService.authUser().subscribe(user => {
-      if (user) {
-        this.userLogin = user;
+      if (user && user.uid) {
+        this.authService.getUserByUid(user.uid).valueChanges().subscribe(data => {
+          this.userLogin = data;
+          this.userLogin.uid = user.uid;
+        }, error => error)
       }
     });
   }
 
   getChat(contact) {
     this.selectedChat = true;
-    //this.sharedService.changeMessaeg(contact);
-
-    // if (!this.media.isActive('gt-md')) {
-    //   this.fuseMatSidenavService.getSidenav('chat-left-sidenav').toggle();
-    // }
-
+    this.sharedService.changeMessaeg(contact);
   }
 }
