@@ -7,63 +7,24 @@
     </mat-toolbar>
     <mat-nav-list>
 
+      <div *ngFor="let user of users | async">
+        <button mat-button class="contact" (click)="getChat(user)" *ngIf="user.key !== userLogin.uid">
+          <div fxLayout="row" fxLayoutAlign="start center">
 
-        <div *ngFor="let user of users | async">
-            <!-- {{user.key}} - {{contactoLogin.uid}} -->
-            <button mat-button class="contact" (click)="getChat(user)" *ngIf="user.key !== userLogin.uid">
-              <!-- <mat-card-header>
-                  <div class="avatar-wrapper">
-                      <img class="avatar" *ngIf="user.avatar" [src]="user.avatar">
-                      <img class="avatar" *ngIf="!user.avatar" src="assets/img/avatars/profile.jpg">
-                  </div>
-                  <mat-card-title>{{user.displayName}}</mat-card-title>
-                </mat-card-header> -->
-
-              <div fxLayout="row" fxLayoutAlign="start center">
-
-                <div class="avatar-wrapper" fxFlex="0 1 auto" fxLayoutAlign="center center">
-                  <img class="avatar" *ngIf="user.avatar" [src]="user.avatar" alt="{{user.name}}" />
-                  <img class="avatar" *ngIf="!user.avatar" src="assets/img/avatars/profile.jpg">
-                  <mat-icon class="s-16 status" [ngClass]="user.status"></mat-icon>
-                </div>
-                <div fxLayout="row" fxFlex>
-
-                  <div class="" fxFlex fxLayout="column" fxLayoutAlign="center start">
-                    <div class="contact-name">{{user.name}}</div>
-                  </div>
-
-                  <!-- <div fxLayout="column" fxLayoutAlign="center end">
-                            <div class="contact-last-message-time">
-                                {{user.lastMessageTime | date}}
-                            </div>
-                            <div *ngIf="chat.unread" class="unread-message-count">{{chat.unread}}</div>
-                        </div> -->
-                </div>
+            <div class="avatar-wrapper" fxFlex="0 1 auto" fxLayoutAlign="center center">
+              <img class="avatar" *ngIf="user.avatar" [src]="user.avatar" alt="{{user.name}}" />
+              <img class="avatar" *ngIf="!user.avatar" src="assets/img/avatars/profile.jpg">
+              <mat-icon class="s-16 status" [ngClass]="user.status"></mat-icon>
+            </div>
+            <div fxLayout="row" fxFlex>
+              <div fxFlex fxLayout="column" fxLayoutAlign="center start">
+                <div class="contact-name">{{user.name}}</div>
               </div>
-            </button>
-</div>
-
-
-      <!-- <a mat-list-item *ngFor="let user of users | async">
-        <div fxLayout="row" fxLayoutAlign="start center">
-          <div class="avatar-wrapper" fxFlex="0 1 auto" fxLayoutAlign="center center">
-            <img class="avatar" *ngIf="user.avatar" [src]="user.avatar" alt="{{user.name}}" />
-            <img class="avatar" *ngIf="!user.avatar" src="assets/img/avatars/profile.jpg">
-            <mat-icon class="s-16 status" [ngClass]="user.status"></mat-icon>
-          </div>
-
-          <div fxLayout="row" fxFlex>
-            <div class="" fxFlex fxLayout="column" fxLayoutAlign="center start">
-              <div class="contact-name">{{user.name}}</div>
             </div>
           </div>
+        </button>
+      </div>
 
-
-        </div>
-      </a>
-      <a mat-list-item routerLink="/chat">Link 1</a>
-      <a mat-list-item>Link 2</a>
-      <a mat-list-item href="#">Link 3</a> -->
     </mat-nav-list>
   </mat-sidenav>
 
@@ -74,9 +35,9 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
     </mat-toolbar>
-
+    <!-- {{userLogin | json}} -->
     <app-chat-start *ngIf="!selectedChat"></app-chat-start>
-    <app-chat-view *ngIf="selectedChat"></app-chat-view>
+    <app-chat-view *ngIf="selectedChat" [user]="userLogin"></app-chat-view>
   </mat-sidenav-content>
 
 </mat-sidenav-container>

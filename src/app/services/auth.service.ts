@@ -30,7 +30,6 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.createUserWithEmailAndPassword(email, password)
         .then(user => {
-          debugger;
           this.setUserData(email, name, "online", user.user.uid, "");
           resolve(user);
         }, err => reject(err));
@@ -52,7 +51,6 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(user => {
-          debugger;
           this.setUserData(user.user.email, user.user.displayName, "online", user.user.uid, user.user.photoURL);
           resolve(user);
         }, err => reject(err));

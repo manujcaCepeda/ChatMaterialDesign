@@ -1,3 +1,84 @@
-<p>
-  chat-view works!
-</p>
+<!-- CHAT -->
+<div class="chat" fxFlex fxLayout="column">
+
+  <!-- CHAT TOOLBAR -->
+  <mat-toolbar class="chat-toolbar">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between center" class="personChat">
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="fotoPersonChat">
+        <!-- CHAT CONTACT-->
+        <div class="chat-contact" fxLayout="row" fxLayoutAlign="start center" fuseMatSidenavToggler="chat-right-sidenav">
+          <div class="avatar-wrapper">
+            <img *ngIf="contacto.avatar" [src]="contacto.avatar" class="avatar" alt="{{contacto.name}}" />
+            <img *ngIf="!contacto.avatar" class="avatar" src="assets/img/avatars/profile.jpg">
+          </div>
+          <div class="chat-contacto-name">
+            {{contacto.name}}
+          </div>
+        </div>
+        <!-- / CHAT CONTACT-->
+      </div>
+
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="contactMenu" aria-label="more">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #contactMenu="matMenu">
+          <button mat-menu-item fuseMatSidenavToggler="chat-right-sidenav" (click)="selectContact()">
+            Contact Info
+          </button>
+        </mat-menu>
+      </div>
+
+    </div>
+  </mat-toolbar>
+  <!-- / CHAT TOOLBAR -->
+
+
+
+  <!-- CHAT CONTENT -->
+  <div id="chat-content" fxFlex fusePerfectScrollbar class="contentChat">
+    <!-- CHAT MESSAGES -->
+    <div class="chat-messages" style="max-height: 410px; overflow: auto;">
+
+      <!-- MESSAGE -->
+      <div fxLayout="row" *ngFor="let message of chatsSend | async" class="message-row" [ngClass]="{'user' :message.who === user.uid}"
+        style="flex-direction: row; box-sizing: border-box; display: flex;">
+        <img *ngIf="message.who === contacto.key" [src]="contacto.avatar" class="avatar" [alt]="contacto.uid"/>
+        <img *ngIf="message.who === user.uid" class="avatar" [src]="user.avatar" [alt]="user.name">
+
+        <div class="bubble">
+          <div class="message">{{message.message}}</div>
+          <div class="time secondary-text">{{message.time | date:'medium'}}</div>
+        </div>
+      </div>
+
+      <!-- / MESSAGE -->
+    </div>
+    <!-- CHAT MESSAGES -->
+  </div>
+  <!-- / CHAT CONTENT -->
+
+
+
+  <!-- CHAT FOOTER -->
+  <div class="footer chat-footer" fxLayout="row" fxLayoutAlign="center center">
+
+    <!-- REPLY FORM -->
+    <form #replyForm="ngForm" (ngSubmit)="sendChat()" (keyup.enter)="sendChat()" fxFlex class="reply-form" fxLayout="row" fxLayoutAlign="start center">
+
+      <mat-form-field class="" fxFlex floatLabel="never" style="flex: 1 1 0%;">
+        <textarea matInput #replyInput placeholder="Type and hit enter to send message" [(ngModel)]="message" name="message"></textarea>
+      </mat-form-field>
+
+      <button mat-fab class="" type="submit" aria-label="Send message" class="mb-3 mr-3">
+        <mat-icon >send</mat-icon>
+      </button>
+
+    </form>
+    <!-- / REPLY FORM -->
+  </div>
+  <!-- / CHAT FOOTER-->
+</div>
+<!-- / CHAT -->
